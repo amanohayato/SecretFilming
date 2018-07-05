@@ -1,0 +1,2 @@
+主に車、市民、信号を担当しました。
+「Car」「Citizen」「Signal」「IconControl」「CarGenerateManager」「CitizenGenerateManager」「GameClearEvent」「Performance」等。
