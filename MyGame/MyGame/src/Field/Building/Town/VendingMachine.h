@@ -1,0 +1,30 @@
+#ifndef VENDING_MACHINE_H_
+#define VENDING_MACHINE_H_
+
+#include "../BuildingBase.h"
+
+class VendingMachine : public BuildingBase {
+public:
+	VendingMachine(IWorld* world, const Vector3& position, int rotationNum = 0);
+	VendingMachine(IWorld* world, const Vector2& position, int rotationNum = 0);
+	VendingMachine(IWorld* world, int width, int height, int rotationNum = 0, const Vector2& offset = Vector2::Zero);
+	void update(float deltaTime) override;
+	void draw() const override;
+	void end() override;
+
+	// 固有イベント
+	void vending() override;
+	virtual void message(EventMessage eventMessage, void* param = nullptr) override;
+	virtual void onCollide(Actor& other);
+	virtual void setTexture(int type)override;
+
+	std::shared_ptr<BuildingBase> clone() override;
+	std::shared_ptr<BuildingBase> clone(IWorld* world, const Vector3& position, int rotationNum) override;
+	std::shared_ptr<BuildingBase> clone(IWorld* world, const Vector2& position, int rotationNum) override;
+	std::shared_ptr<BuildingBase> clone(IWorld* world, int width, int height, int rotationNum = 0, const Vector2& offset = Vector2::Zero) override;
+
+private:
+	std::function<void()> emission_{ [] {} };
+};
+
+#endif // !VENDING_MACHINE_H_

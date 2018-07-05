@@ -1,0 +1,11 @@
+#pragma once
+#include"Player_Idle.h"
+#include"Player_Dash.h"
+#include"Player_Fall.h"
+#include"Player_SetUp.h"
+#include"Player_Event_Before.h"
+#include"Player_EventAction.h"
+#include"Player_Event_After.h"
+#include"Player_Launch.h"
+#include"Player_MapApp.h"
+#include"Player_ActionReset.h"

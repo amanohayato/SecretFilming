@@ -1,0 +1,143 @@
+#include "DxLib.h"
+
+struct int4 {
+	int x;
+	int y;
+	int z;
+	int w;
+};
+struct Floor_CB {
+
+	int4 celltype[64];
+	int gridSize;
+	int maxSize;
+	int columnSize;
+	float padding;
+
+};
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+{
+	int ModelHandle;
+	int PixelShaderHandle;
+	int VertexShaderHandle;
+	float RotateAngle;
+
+	// ウインドウモードで起動
+	ChangeWindowMode(TRUE);
+
+	// ＤＸライブラリの初期化
+	if (DxLib_Init() < 0)
+	{
+		// エラーが発生したら直ちに終了
+		return -1;
+	}
+	auto size = sizeof(Floor_CB);
+	int handle = CreateShaderConstantBuffer(size);
+
+	Floor_CB* floorcb = (Floor_CB*)GetBufferShaderConstantBuffer(handle);
+	floorcb->gridSize = 165;
+	floorcb->maxSize = 5000;
+	floorcb->columnSize = 8;
+	for (int i = 0; i < 48; i++) {
+		floorcb->celltype[i].x = 0;
+	}
+	for (int i = 0; i < 16; i++) {
+		floorcb->celltype[i+48].x = 1;
+	}
+	UpdateShaderConstantBuffer(handle);
+
+	// 頂点シェーダーを読み込む
+	VertexShaderHandle = LoadVertexShader("NormalMesh_NoLightVS.vso");
+
+	// ピクセルシェーダーを読み込む
+	PixelShaderHandle = LoadPixelShader("NormalMesh_NoLightPS.pso");
+
+	// 剛体メッシュモデルを読み込む
+	ModelHandle = MV1LoadModel("untitled.mv1");
+
+	// 描画先を裏画面にする
+	SetDrawScreen(DX_SCREEN_BACK);
+
+	// モデルを回転される値を初期化
+	RotateAngle = 0.0f;
+
+	// モデルの描画にオリジナルシェーダーを使用する設定をＯＮにする
+	MV1SetUseOrigShader(TRUE);
+	SetShaderConstantBuffer(handle, DX_SHADERTYPE_PIXEL, 3);
+
+	// 使用する頂点シェーダーをセット
+	SetUseVertexShader(VertexShaderHandle);
+
+	// 使用するピクセルシェーダーをセット
+	SetUsePixelShader(PixelShaderHandle);
+
+
+	float camPosx = 0.0f;
+	float camPosy = 0.0f;
+	float camPosz = -10000.0f;
+	// モデルを画面の中心にセット
+	MV1SetPosition(ModelHandle, VGet(0.0f, 0.0f, 0.0f));
+
+	// ESCキーが押されるまでループ
+	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
+	{
+		// 画面を初期化
+		ClearDrawScreen();
+
+		float power = 20.0f;
+		if (CheckHitKey(KEY_INPUT_W))camPosy += power;
+		if (CheckHitKey(KEY_INPUT_S))camPosy -= power;
+		if (CheckHitKey(KEY_INPUT_A))camPosx -= power;
+		if (CheckHitKey(KEY_INPUT_D))camPosx += power;
+		if (CheckHitKey(KEY_INPUT_E))camPosz -= power;
+		if (CheckHitKey(KEY_INPUT_Q))camPosz += power;
+
+		SetCameraPositionAndTargetAndUpVec(VGet(camPosx, camPosy, camPosz), VGet(0.0f,0.0f,1.0f),VGet(0.0f,1.0f,0.1f));
+		
+
+		// モデルを回転値を加算
+		//RotateAngle += 0.02f;
+
+		// モデルの回転値をモデルにセット
+		MV1SetRotationXYZ(ModelHandle, VGet(-0.0f/180.0f*3.14f, RotateAngle, 0.0f));
+		//Floor_CB* floorcb = (Floor_CB*)GetBufferShaderConstantBuffer(handle);
+		//floorcb->gridSize = 165;
+		//floorcb->maxSize = 5000;
+		//floorcb->columnSize = 8;
+		//for (int i = 0; i < 32; i++) {
+		//	floorcb->celltype[i] = 1;
+		//}
+		//for (int i = 0; i < 32; i++) {
+		//	floorcb->celltype[i + 32] = 2;
+		//}
+		//UpdateShaderConstantBuffer(handle);
+		SetShaderConstantBuffer(handle, DX_SHADERTYPE_PIXEL, 3);
+
+		VertexShaderHandle = LoadVertexShader("NormalMesh_NoLightVS.vso");
+
+		// ピクセルシェーダーを読み込む
+		PixelShaderHandle = LoadPixelShader("NormalMesh_NoLightPS.pso");
+
+		// モデルを描画
+		MV1DrawModel(ModelHandle);
+
+		// 裏画面の内容を表画面に反映させる
+		ScreenFlip();
+	}
+
+	// 読み込んだ頂点シェーダーの削除
+	DeleteShader(VertexShaderHandle);
+
+	// 読み込んだピクセルシェーダーの削除
+	DeleteShader(PixelShaderHandle);
+
+	// 読み込んだモデルの削除
+	MV1DeleteModel(ModelHandle);
+
+	// ＤＸライブラリの後始末
+	DxLib_End();
+
+	// ソフトの終了
+	return 0;
+}

@@ -1,0 +1,3 @@
+$(ProjectDir) プロジェクトのパス
+%(Filename) 元ファイルの名前
+$(ProjectDir)res/Shader/%(Filename).cso

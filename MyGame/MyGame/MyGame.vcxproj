@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7B5F224E-2B02-43EC-9E39-B00F94110564}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MyGame</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>../Library\DxLib_VC;$(IncludePath)</IncludePath>
+    <LibraryPath>../Library\DxLib_VC;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>../Library\DxLib_VC;$(IncludePath)</IncludePath>
+    <LibraryPath>../Library\DxLib_VC;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>../Library\DxLib_VC;$(IncludePath)</IncludePath>
+    <LibraryPath>../Library\DxLib_VC;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>../Library\DxLib_VC;$(IncludePath)</IncludePath>
+    <LibraryPath>../Library\DxLib_VC;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>C:\2018_DxLib_Lib\DxLib_VC</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>C:\2018_DxLib_Lib\DxLib_VC</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\2018_DxLib_Lib\DxLib_VC</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\2018_DxLib_Lib\DxLib_VC</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LinkTimeCodeGeneration />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Actor\Actor.cpp" />
+    <ClCompile Include="src\Actor\ActorManager.cpp" />
+    <ClCompile Include="src\Actor\Body\BoundingBox.cpp" />
+    <ClCompile Include="src\Actor\Body\BoundingCapsule.cpp" />
+    <ClCompile Include="src\Actor\Body\BoundingSegment.cpp" />
+    <ClCompile Include="src\Actor\Body\BoundingSphere.cpp" />
+    <ClCompile Include="src\Actor\Body\OrientedBoundingBox.cpp" />
+    <ClCompile Include="src\Actor\Body\Ray.cpp" />
+    <ClCompile Include="src\Actor\Car\Car.cpp" />
+    <ClCompile Include="src\Actor\Car\CarGenerateManager.cpp" />
+    <ClCompile Include="src\Actor\Citizen\Citizen.cpp" />
+    <ClCompile Include="src\Actor\Citizen\CitizenGenerateManager.cpp" />
+    <ClCompile Include="src\Actor\Citizen\WalkPathReader.cpp" />
+    <ClCompile Include="src\Actor\Enemy\Enemy.cpp" />
+    <ClCompile Include="src\Actor\Enemy\EnemyBarrier.cpp" />
+    <ClCompile Include="src\Actor\Enemy\EnemyBase.cpp" />
+    <ClCompile Include="src\Actor\Enemy\EnemyCap.cpp" />
+    <ClCompile Include="src\Actor\Enemy\EnemyMovePointChooser.cpp" />
+    <ClCompile Include="src\Actor\Enemy\Octopus.cpp" />
+    <ClCompile Include="src\Actor\Enemy\TutorialEnemy\TutorialEnemy.cpp" />
+    <ClCompile Include="src\Actor\EventActor\AbductUfo\AbductUfo.cpp" />
+    <ClCompile Include="src\Actor\EventActor\Cat\AbductCat.cpp" />
+    <ClCompile Include="src\Actor\EventActor\EnemyBeam\EnemyBeam.cpp" />
+    <ClCompile Include="src\Actor\EventActor\EventEnemy\EnemyHatManager\EnemyHatManager.cpp" />
+    <ClCompile Include="src\Actor\EventActor\EventEnemy\EnemyHatManager\EnemyHat\EnemyHat.cpp" />
+    <ClCompile Include="src\Actor\EventActor\EventEnemy\EventCar\EventCar.cpp" />
+    <ClCompile Include="src\Actor\EventActor\EventUtility\MoveActor.cpp" />
+    <ClCompile Include="src\Actor\EventActor\GameClearEvent\GameClearEvent.cpp" />
+    <ClCompile Include="src\Actor\EventActor\GameOverEvent\GameOverEvent.cpp" />
+    <ClCompile Include="src\Actor\EventActor\GameOverEvent\GameOverUfo.cpp" />
+    <ClCompile Include="src\Actor\EventActor\Manhoru\Manhoru.cpp" />
+    <ClCompile Include="src\Actor\EventActor\Police\EventPolice.cpp" />
+    <ClCompile Include="src\Actor\EventActor\Police\Police.cpp" />
+    <ClCompile Include="src\Actor\EventActor\UfoTako\UfoTako.cpp" />
+    <ClCompile Include="src\Actor\EventActor\Ufo\EventUfo.cpp" />
+    <ClCompile Include="src\Actor\EventActor\Zihanki\Zihanki.cpp" />
+    <ClCompile Include="src\Actor\Object\Signal.cpp" />
+    <ClCompile Include="src\Actor\Other\BgmChange.cpp" />
+    <ClCompile Include="src\Actor\Other\CameraActor.cpp" />
+    <ClCompile Include="src\Actor\Other\CarCamera.cpp" />
+    <ClCompile Include="src\Actor\Other\CheckPoint.cpp" />
+    <ClCompile Include="src\Actor\Other\Confirm.cpp" />
+    <ClCompile Include="src\Actor\Other\IconControl.cpp" />
+    <ClCompile Include="src\Actor\Other\log.cpp" />
+    <ClCompile Include="src\Actor\PhoneApp\CameraApp.cpp" />
+    <ClCompile Include="src\Actor\PhoneApp\MapApp.cpp" />
+    <ClCompile Include="src\Actor\PhoneApp\SmartPhone.cpp" />
+    <ClCompile Include="src\Actor\Player\Base\FPSCamera.cpp" />
+    <ClCompile Include="src\Actor\Player\Base\MatrixRotation.cpp" />
+    <ClCompile Include="src\Actor\Player\Base\Player_arm.cpp" />
+    <ClCompile Include="src\Actor\Player\Event\EvenetState.cpp" />
+    <ClCompile Include="src\Actor\Player\Player.cpp" />
+    <ClCompile Include="src\Actor\Player\State\PlayerState.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_ActionReset.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_Dash.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_EventAction.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_Event_After.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_Event_Before.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_Fall.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_Idle.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_Launch.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_MapApp.cpp" />
+    <ClCompile Include="src\Actor\Player\State\Player_SetUp.cpp" />
+    <ClCompile Include="src\Actor\TitleActor\TitleUfo\TitleUfo.cpp" />
+    <ClCompile Include="src\Actor\TitleActor\TitleUfo\TitleUfoFactory.cpp" />
+    <ClCompile Include="src\Actor\TitleCamera\TitleCamera.cpp" />
+    <ClCompile Include="src\Actor\UIActor\AlertGauge.cpp" />
+    <ClCompile Include="src\Actor\UIActor\MissionStart\MissionStart.cpp" />
+    <ClCompile Include="src\Actor\UIActor\NoticedLine.cpp" />
+    <ClCompile Include="src\Camera\Camera.cpp" />
+    <ClCompile Include="src\Camera\CaptureScreen.cpp" />
+    <ClCompile Include="src\Conv\DXConverter.cpp" />
+    <ClCompile Include="src\Actor\Effect\Particle\Smoke\SmokeEffect.cpp" />
+    <ClCompile Include="src\Event\EventActor\JunctionEvent\01\JunctionEventActor01.cpp" />
+    <ClCompile Include="src\Event\EventActor\JunctionEvent\02\JunctionEventActor02.cpp" />
+    <ClCompile Include="src\Event\EventActor\JunctionEvent\03\JunctionEventActor03.cpp" />
+    <ClCompile Include="src\Event\EventActor\JunctionEvent\04\JunctionEventActor04.cpp" />
+    <ClCompile Include="src\Event\EventActor\KaiwaEvent\01\KaiwaEventActor01.cpp" />
+    <ClCompile Include="src\Event\EventActor\KaiwaEvent\02\KaiwaEventActor02.cpp" />
+    <ClCompile Include="src\Event\EventActor\KituenzyoEvent\01\KituenzyoEventActor01.cpp" />
+    <ClCompile Include="src\Event\EventActor\KituenzyoEvent\02\KituenzyoEventActor02.cpp" />
+    <ClCompile Include="src\Event\EventActor\KituenzyoEvent\03\KituenzyoEventActor03.cpp" />
+    <ClCompile Include="src\Event\EventActor\KituenzyoEvent\04\KituenzyoEventActor04.cpp" />
+    <ClCompile Include="src\Event\EventActor\KituenzyoEvent\05\KituenzyoEventActor05.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\02\ManhoruEventActor02.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\03\ManhoruEventActor03.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\04\ManhoruEventActor04.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\05\ManhoruEventActor05.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\06\ManhoruEventActor06.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\07\ManhoruEventActor07.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\08\ManhoruEventActor08.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\09\ManhoruEventActor09.cpp" />
+    <ClCompile Include="src\Event\EventActor\ManhoruEvent\10\ManhoruEventActor10.cpp" />
+    <ClCompile Include="src\Event\EventActor\NekoEvent\01\NekoEventActor01.cpp" />
+    <ClCompile Include="src\Event\EventActor\NekoEvent\02\NekoEventActor02.cpp" />
+    <ClCompile Include="src\Event\EventActor\NekoEvent\03\NekoEventActor03.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\01\PoliceEventActor01.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\02\PoliceEventActor02.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\03\PoliceEventActor03.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\04\PoliceEventActor04.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\05\PoliceEventActor05.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\06\PoliceEventActor06.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\07\PoliceEventActor07.cpp" />
+    <ClCompile Include="src\Event\EventActor\PoliceEvent\08\PoliceEventActor08.cpp" />
+    <ClCompile Include="src\Event\EventActor\ZihankiEvent\01\ZihankiEventActor01.cpp" />
+    <ClCompile Include="src\Event\EventActor\ZihankiEvent\02\ZihankiEventActor02.cpp" />
+    <ClCompile Include="src\Event\EventActor\ZihankiEvent\03\ZihankiEventActor03.cpp" />
+    <ClCompile Include="src\Event\EventActor\ZihankiEvent\04\ZihankiEventActor04.cpp" />
+    <ClCompile Include="src\Event\EventActor\ZihankiEvent\05\ZihankiEventActor05.cpp" />
+    <ClCompile Include="src\Event\EventActor\ZihankiEvent\06\ZihankiEventActor06.cpp" />
+    <ClCompile Include="src\Event\EventActor\_ShareEventActor\KizukiEventActor.cpp" />
+    <ClCompile Include="src\Event\EventActor\_ShareEventActor\MimawasiEventActor.cpp" />
+    <ClCompile Include="src\Event\EventManager\EventManager.cpp" />
+    <ClCompile Include="src\Event\Event\Event.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEventManager\RandomEventManager.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEventProbability\RandomEventProbability.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\FallDownRandomEvent\FallDownRandomEvent.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\NullRandomEvent\NullRandomEvent.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\RandomEventState\ConversationState\ConversationState.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\RandomEventState\FallDownState\FallDownState.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\RandomEventState\HologramState\HologramState.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\RandomEventState\LookAroundState\LookAroundState.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\RandomEventState\RisingHatState\RisingHatState.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\RandomEventState\StopShineState\StopShineState.cpp" />
+    <ClCompile Include="src\Event\RandomEvent\RandomEvent\SignalRandomEvent\SignalRandomEvent.cpp" />
+    <ClCompile Include="src\Field\Building\BuildingBase.cpp" />
+    <ClCompile Include="src\Field\Building\BuildingCollision.cpp" />
+    <ClCompile Include="src\Field\Building\BuildingCollisionMap.cpp" />
+    <ClCompile Include="src\Field\Building\BuildingManager.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Apartment_1.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Apartment_2.cpp" />
+    <ClCompile Include="src\Field\Building\Town\EventBackStreetKaiwa.cpp" />
+    <ClCompile Include="src\Field\Building\Town\EventBackStreetRati.cpp" />
+    <ClCompile Include="src\Field\Building\Town\FishStore.cpp" />
+    <ClCompile Include="src\Field\Building\Town\House_1.cpp" />
+    <ClCompile Include="src\Field\Building\Town\House_2.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Kousaten\KousatenBulding.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Manhoru\ManhoruBulding.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Neko\NekoBuilding.cpp" />
+    <ClCompile Include="src\Field\Building\Town\PoliceBox.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Signal\Car_Signal.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Signal\Citizen_Signal1.cpp" />
+    <ClCompile Include="src\Field\Building\Town\Signal\Citizen_Signal2.cpp" />
+    <ClCompile Include="src\Field\Building\Town\SmokingArea.cpp" />
+    <ClCompile Include="src\Field\Building\Town\TakoyakiYatai.cpp" />
+    <ClCompile Include="src\Field\Building\Town\TrafficLight_Car.cpp" />
+    <ClCompile Include="src\Field\Building\Town\TrafficLight_Human.cpp" />
+    <ClCompile Include="src\Field\Building\Town\VendingMachine.cpp" />
+    <ClCompile Include="src\Field\CityMap.cpp" />
+    <ClCompile Include="src\Field\FieldBase.cpp" />
+    <ClCompile Include="src\Field\FieldOut.cpp" />
+    <ClCompile Include="src\Field\Field\Field.cpp" />
+    <ClCompile Include="src\Field\Map\BuildingBlockSizeList.cpp" />
+    <ClCompile Include="src\Field\Map\MapGenerator.cpp" />
+    <ClCompile Include="src\Field\Map\RandomEventCreator.cpp" />
+    <ClCompile Include="src\Field\Map\TJunctionCreator.cpp" />
+    <ClCompile Include="src\Field\PointGenerator.cpp" />
+    <ClCompile Include="src\Field\Skybox\Skybox.cpp" />
+    <ClCompile Include="src\Field\WalkGraph.cpp" />
+    <ClCompile Include="src\Field\WalkMap.cpp" />
+    <ClCompile Include="src\Field\WorldContentManager\WorldContentManager.cpp" />
+    <ClCompile Include="src\Game\Time.cpp" />
+    <ClCompile Include="src\Graphic\AnimationDx.cpp" />
+    <ClCompile Include="src\Graphic\AnimationOutSide.cpp" />
+    <ClCompile Include="src\Graphic\DrawNumber.cpp" />
+    <ClCompile Include="src\Graphic\FontManager.cpp" />
+    <ClCompile Include="src\Graphic\Light.cpp" />
+    <ClCompile Include="src\Graphic\Model.cpp" />
+    <ClCompile Include="src\Graphic\Movie.cpp" />
+    <ClCompile Include="src\Graphic\Particle\Base\ParticleManager.cpp" />
+    <ClCompile Include="src\Graphic\Particle\Base\ParticlePiece.cpp" />
+    <ClCompile Include="src\Graphic\ScalingImage.cpp" />
+    <ClCompile Include="src\Graphic\Shader\ShaderManager.cpp" />
+    <ClCompile Include="src\Graphic\ShadowMap.cpp" />
+    <ClCompile Include="src\Graphic\Sprite.cpp" />
+    <ClCompile Include="src\Graphic\SpriteAnimation\ScalingSprite.cpp" />
+    <ClCompile Include="src\Graphic\TextBox.cpp" />
+    <ClCompile Include="src\Graphic\TextDraw.cpp" />
+    <ClCompile Include="src\Input\DualShock4Input.cpp" />
+    <ClCompile Include="src\Input\DualShock4Manager.cpp" />
+    <ClCompile Include="src\Input\GamePad.cpp" />
+    <ClCompile Include="src\Input\InputChecker.cpp" />
+    <ClCompile Include="src\Input\Keyboard.cpp" />
+    <ClCompile Include="src\Math\Collision\Collision.cpp" />
+    <ClCompile Include="src\Math\Color.cpp" />
+    <ClCompile Include="src\Math\Easing.cpp" />
+    <ClCompile Include="src\Math\MathHelper.cpp" />
+    <ClCompile Include="src\Math\Matrix.cpp" />
+    <ClCompile Include="src\Math\Matrix2D.cpp" />
+    <ClCompile Include="src\Math\Point.cpp" />
+    <ClCompile Include="src\Math\Quaternion.cpp" />
+    <ClCompile Include="src\Math\Random.cpp" />
+    <ClCompile Include="src\Math\Vector2.cpp" />
+    <ClCompile Include="src\Math\Vector3.cpp" />
+    <ClCompile Include="src\Method\MethodTimer.cpp" />
+    <ClCompile Include="src\Resource\CsvReader.cpp" />
+    <ClCompile Include="src\Scene\DemoMovieScene.cpp" />
+    <ClCompile Include="src\Scene\EntranceScene\EntranceScene.cpp" />
+    <ClCompile Include="src\Scene\GamePlayScene\GamePlayScene.cpp" />
+    <ClCompile Include="src\Scene\GameTestScene.cpp" />
+    <ClCompile Include="src\Scene\Kataoka\Kataoka.cpp" />
+    <ClCompile Include="src\Scene\LoadingScene.cpp" />
+    <ClCompile Include="src\Scene\Manager\GameDataManager.cpp" />
+    <ClCompile Include="src\Scene\ResultScene\ResultScene.cpp" />
+    <ClCompile Include="src\Scene\SceneManager.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Menu\DecisionMenu\DecisionMenu.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Menu\MainMenu\MainMenu.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Menu\Option\Option.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Menu\PauseMenu\PauseMunu.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Performance\Performance.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Result\DisplayPhoto\DisplayPhoto.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Result\ScoreSheet\ScoreSheet.cpp" />
+    <ClCompile Include="src\Scene\SubScene\Title\Title.cpp" />
+    <ClCompile Include="src\Scene\TransitionsAnimation\FadeAnimation\FadeAnimation.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\01_TutorialStart\TutorialStart.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\02_DeterminationDescription\DeterminationDescription.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\03_LookAlien\LookAlien.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\04_LookCameraIcon\LookCameraIcon.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\05_TakaShutter\TakaShutter.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\06_ShootingSuccess\ShootingSuccess.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\07_AlienWarning\AlienWarning.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\08_StartHide\StartHide.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\09_Hiding\Hiding.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\10_LookAlertnessIcon\LookAlertnessIcon.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\11_EndHide\EndHide.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\12_ReturnViewPoint\ReturnViewPoint.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\13_ShowMap\ShowMap.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\14_LookMap\LookMap.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\15_LookMapIconDescription\LookMapIconDescription.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\16_LookMapEnemyIcon\LookMapEnemyIcon.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\18_Running\Running.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\19_SpecifiedPoint\SpecifiedPoint.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\17_CloseMap\CloseMap.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\20_ReShowMap\ReShowMap.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\21_LookSpecifiedPointIcon\LookSpecifiedPointIcon.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\22_ReCloseMap\ReCloseMap.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\23_TutorialEnd\TutorialEnd.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialCommand\TutorialCommand.cpp" />
+    <ClCompile Include="src\Scene\TutorialScene\TutorialScene.cpp" />
+    <ClCompile Include="src\Sound\Sound.cpp" />
+    <ClCompile Include="src\UI\Action.cpp" />
+    <ClCompile Include="src\UI\CameraUI.cpp" />
+    <ClCompile Include="src\UI\FieldMap.cpp" />
+    <ClCompile Include="src\UI\ShutterFrame.cpp" />
+    <ClCompile Include="src\UI\UI.cpp" />
+    <ClCompile Include="src\UI\UIManager.cpp" />
+    <ClCompile Include="src\UI\UITemplate.cpp" />
+    <ClCompile Include="src\World\ObjectManager.CPP" />
+    <ClCompile Include="src\World\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Actor\Actor.h" />
+    <ClInclude Include="src\Actor\ActorManager.h" />
+    <ClInclude Include="src\Actor\ActorPtr.h" />
+    <ClInclude Include="src\Actor\Actors.h" />
+    <ClInclude Include="src\Actor\Body\Base\Body.h" />
+    <ClInclude Include="src\Actor\Body\Base\DummyBody.h" />
+    <ClInclude Include="src\Actor\Body\Base\HitInfo.h" />
+    <ClInclude Include="src\Actor\Body\Base\IBody.h" />
+    <ClInclude Include="src\Actor\Body\Base\IBodyPtr.h" />
+    <ClInclude Include="src\Actor\Body\Base\ShapeType.h" />
+    <ClInclude Include="src\Actor\Body\BoundingBox.h" />
+    <ClInclude Include="src\Actor\Body\BoundingCapsule.h" />
+    <ClInclude Include="src\Actor\Body\BoundingSegment.h" />
+    <ClInclude Include="src\Actor\Body\BoundingSphere.h" />
+    <ClInclude Include="src\Actor\Body\CollisionModel.h" />
+    <ClInclude Include="src\Actor\Body\OrientedBoundingBox.h" />
+    <ClInclude Include="src\Actor\Body\Ray.h" />
+    <ClInclude Include="src\Actor\Car\Car.h" />
+    <ClInclude Include="src\Actor\Car\CarGenerateManager.h" />
+    <ClInclude Include="src\Actor\Citizen\Citizen.h" />
+    <ClInclude Include="src\Actor\Citizen\CitizenGenerateManager.h" />
+    <ClInclude Include="src\Actor\Citizen\WalkPathReader.h" />
+    <ClInclude Include="src\Actor\Enemy\Enemy.h" />
+    <ClInclude Include="src\Actor\Enemy\EnemyBarrier.h" />
+    <ClInclude Include="src\Actor\Enemy\EnemyBase.h" />
+    <ClInclude Include="src\Actor\Enemy\EnemyCap.h" />
+    <ClInclude Include="src\Actor\Enemy\EnemyMovePointChooser.h" />
+    <ClInclude Include="src\Actor\Enemy\Octopus.h" />
+    <ClInclude Include="src\Actor\Enemy\TutorialEnemy\TutorialEnemy.h" />
+    <ClInclude Include="src\Actor\EventActor\AbductUfo\AbductUfo.h" />
+    <ClInclude Include="src\Actor\EventActor\Cat\AbductCat.h" />
+    <ClInclude Include="src\Actor\EventActor\EnemyBeam\EnemyBeam.h" />
+    <ClInclude Include="src\Actor\EventActor\EventEnemy\EnemyHatManager\EnemyHatManager.h" />
+    <ClInclude Include="src\Actor\EventActor\EventEnemy\EnemyHatManager\EnemyHat\EnemyHat.h" />
+    <ClInclude Include="src\Actor\EventActor\EventEnemy\EventCar\EventCar.h" />
+    <ClInclude Include="src\Actor\EventActor\EventEnemy\EventEnemy.h" />
+    <ClInclude Include="src\Actor\EventActor\EventUtility\MoveActor.h" />
+    <ClInclude Include="src\Actor\EventActor\GameClearEvent\GameClearEvent.h" />
+    <ClInclude Include="src\Actor\EventActor\GameOverEvent\GameOverEvent.h" />
+    <ClInclude Include="src\Actor\EventActor\GameOverEvent\GameOverUfo.h" />
+    <ClInclude Include="src\Actor\EventActor\Manhoru\Manhoru.h" />
+    <ClInclude Include="src\Actor\EventActor\Police\EventPolice.h" />
+    <ClInclude Include="src\Actor\EventActor\Police\Police.h" />
+    <ClInclude Include="src\Actor\EventActor\UfoTako\UfoTako.h" />
+    <ClInclude Include="src\Actor\EventActor\Ufo\EventUfo.h" />
+    <ClInclude Include="src\Actor\EventActor\Zihanki\Zihanki.h" />
+    <ClInclude Include="src\Actor\Object\HideObject.h" />
+    <ClInclude Include="src\Actor\Object\Hide_InCamera.h" />
+    <ClInclude Include="src\Actor\Object\Signal.h" />
+    <ClInclude Include="src\Actor\Other\BgmChange.h" />
+    <ClInclude Include="src\Actor\Other\CameraActor.h" />
+    <ClInclude Include="src\Actor\Other\CarCamera.h" />
+    <ClInclude Include="src\Actor\Other\CheckPoint.h" />
+    <ClInclude Include="src\Actor\Other\Confirm.h" />
+    <ClInclude Include="src\Actor\Other\IconControl.h" />
+    <ClInclude Include="src\Actor\Other\Parts\Move\Vector3_Move.h" />
+    <ClInclude Include="src\Actor\Other\Parts\Move\Vector3_Move_Walk.h" />
+    <ClInclude Include="src\Actor\PhoneApp\CameraApp.h" />
+    <ClInclude Include="src\Actor\PhoneApp\MapApp.h" />
+    <ClInclude Include="src\Actor\PhoneApp\SmartPhone.h" />
+    <ClInclude Include="src\Actor\Player\Base\FPSCamera.h" />
+    <ClInclude Include="src\Actor\Player\Base\MatrixRotation.h" />
+    <ClInclude Include="src\Actor\Player\Base\Player_arm.h" />
+    <ClInclude Include="src\Actor\Player\Event\EvenetState.h" />
+    <ClInclude Include="src\Actor\Player\Player.h" />
+    <ClInclude Include="src\Actor\Player\State\PlayerState.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_ActionReset.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_Dash.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_EventAction.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_Event_After.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_Event_Before.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_Fall.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_Idle.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_Launch.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_MapApp.h" />
+    <ClInclude Include="src\Actor\Player\State\Player_SetUp.h" />
+    <ClInclude Include="src\Actor\Player\State\StateIncludeh.h" />
+    <ClInclude Include="src\Actor\Player\State\State_ID.h" />
+    <ClInclude Include="src\Actor\TitleActor\TitleUfo\TitleUfo.h" />
+    <ClInclude Include="src\Actor\TitleActor\TitleUfo\TitleUfoFactory.h" />
+    <ClInclude Include="src\Actor\TitleCamera\TitleCamera.h" />
+    <ClInclude Include="src\Actor\UIActor\AlertGauge.h" />
+    <ClInclude Include="src\Actor\UIActor\MissionStart\MissionStart.h" />
+    <ClInclude Include="src\Actor\UIActor\NoticedLine.h" />
+    <ClInclude Include="src\Actor\UIActor\TextActor.h" />
+    <ClInclude Include="src\Camera\Camera.h" />
+    <ClInclude Include="src\Camera\CaptureScreen.h" />
+    <ClInclude Include="src\Conv\ByteConverter.h" />
+    <ClInclude Include="src\Conv\DXConverter.h" />
+    <ClInclude Include="src\Define.h" />
+    <ClInclude Include="src\Actor\Effect\Particle\Smoke\SmokeEffect.h" />
+    <ClInclude Include="src\Event\EventActor\EventActor.h" />
+    <ClInclude Include="src\Event\EventActor\JunctionEvent\01\JunctionEventActor01.h" />
+    <ClInclude Include="src\Event\EventActor\JunctionEvent\02\JunctionEventActor02.h" />
+    <ClInclude Include="src\Event\EventActor\JunctionEvent\03\JunctionEventActor03.h" />
+    <ClInclude Include="src\Event\EventActor\JunctionEvent\04\JunctionEventActor04.h" />
+    <ClInclude Include="src\Event\EventActor\KaiwaEvent\01\KaiwaEventActor01.h" />
+    <ClInclude Include="src\Event\EventActor\KaiwaEvent\02\KaiwaEventActor02.h" />
+    <ClInclude Include="src\Event\EventActor\KituenzyoEvent\01\KituenzyoEventActor01.h" />
+    <ClInclude Include="src\Event\EventActor\KituenzyoEvent\02\KituenzyoEventActor02.h" />
+    <ClInclude Include="src\Event\EventActor\KituenzyoEvent\03\KituenzyoEventActor03.h" />
+    <ClInclude Include="src\Event\EventActor\KituenzyoEvent\04\KituenzyoEventActor04.h" />
+    <ClInclude Include="src\Event\EventActor\KituenzyoEvent\05\KituenzyoEventActor05.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\02\ManhoruEventActor02.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\03\ManhoruEventActor03.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\04\ManhoruEventActor04.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\05\ManhoruEventActor05.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\06\ManhoruEventActor06.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\07\ManhoruEventActor07.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\08\ManhoruEventActor08.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\09\ManhoruEventActor09.h" />
+    <ClInclude Include="src\Event\EventActor\ManhoruEvent\10\ManhoruEventActor10.h" />
+    <ClInclude Include="src\Event\EventActor\NekoEvent\01\NekoEventActor01.h" />
+    <ClInclude Include="src\Event\EventActor\NekoEvent\02\NekoEventActor02.h" />
+    <ClInclude Include="src\Event\EventActor\NekoEvent\03\NekoEventActor03.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\01\PoliceEventActor01.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\02\PoliceEventActor02.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\03\PoliceEventActor03.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\04\PoliceEventActor04.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\05\PoliceEventActor05.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\06\PoliceEventActor06.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\07\PoliceEventActor07.h" />
+    <ClInclude Include="src\Event\EventActor\PoliceEvent\08\PoliceEventActor08.h" />
+    <ClInclude Include="src\Event\EventActor\ZihankiEvent\01\ZihankiEventActor01.h" />
+    <ClInclude Include="src\Event\EventActor\ZihankiEvent\02\ZihankiEventActor02.h" />
+    <ClInclude Include="src\Event\EventActor\ZihankiEvent\03\ZihankiEventActor03.h" />
+    <ClInclude Include="src\Event\EventActor\ZihankiEvent\04\ZihankiEventActor04.h" />
+    <ClInclude Include="src\Event\EventActor\ZihankiEvent\05\ZihankiEventActor05.h" />
+    <ClInclude Include="src\Event\EventActor\ZihankiEvent\06\ZihankiEventActor06.h" />
+    <ClInclude Include="src\Event\EventActor\_ShareEventActor\KizukiEventActor.h" />
+    <ClInclude Include="src\Event\EventActor\_ShareEventActor\MimawasiEventActor.h" />
+    <ClInclude Include="src\Event\EventManager\EventManager.h" />
+    <ClInclude Include="src\Event\Event\Event.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEventArea.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEventManager.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEventManager\RandomEventManager.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEventProbability.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEventProbability\RandomEventProbability.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\FallDownRandomEvent\FallDownRandomEvent.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\IRandomEvent.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\IRandomEventPtr.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\NullRandomEvent\NullRandomEvent.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEvent.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventBase\IRandomEvent.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventBase\IRandomEventPtr.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventBase\RandomEvent.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventState\ConversationState\ConversationState.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventState\FallDownState\FallDownState.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventState\HologramState\HologramState.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventState\LookAroundState\LookAroundState.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventState\RisingHatState\RisingHatState.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\RandomEventState\StopShineState\StopShineState.h" />
+    <ClInclude Include="src\Event\RandomEvent\RandomEvent\SignalRandomEvent\SignalRandomEvent.h" />
+    <ClInclude Include="src\Field\Building\BuildingBase.h" />
+    <ClInclude Include="src\Field\Building\BuildingCollision.h" />
+    <ClInclude Include="src\Field\Building\BuildingCollisionMap.h" />
+    <ClInclude Include="src\Field\Building\BuildingManager.h" />
+    <ClInclude Include="src\Field\Building\BuildingPtr.h" />
+    <ClInclude Include="src\Field\Building\Buildings.h" />
+    <ClInclude Include="src\Field\Building\SendEventToEnemy.h" />
+    <ClInclude Include="src\Field\Building\Town\Apartment_1.h" />
+    <ClInclude Include="src\Field\Building\Town\Apartment_2.h" />
+    <ClInclude Include="src\Field\Building\Town\EventBackStreetKaiwa.h" />
+    <ClInclude Include="src\Field\Building\Town\EventBackStreetRati.h" />
+    <ClInclude Include="src\Field\Building\Town\FishStore.h" />
+    <ClInclude Include="src\Field\Building\Town\House_1.h" />
+    <ClInclude Include="src\Field\Building\Town\House_2.h" />
+    <ClInclude Include="src\Field\Building\Town\Kousaten\KousatenBulding.h" />
+    <ClInclude Include="src\Field\Building\Town\Manhoru\ManhoruBulding.h" />
+    <ClInclude Include="src\Field\Building\Town\Neko\NekoBuilding.h" />
+    <ClInclude Include="src\Field\Building\Town\PoliceBox.h" />
+    <ClInclude Include="src\Field\Building\Town\Signal\Car_Signal.h" />
+    <ClInclude Include="src\Field\Building\Town\Signal\Citizen_Signal1.h" />
+    <ClInclude Include="src\Field\Building\Town\Signal\Citizen_Signal2.h" />
+    <ClInclude Include="src\Field\Building\Town\SmokingArea.h" />
+    <ClInclude Include="src\Field\Building\Town\TakoyakiYatai.h" />
+    <ClInclude Include="src\Field\Building\Town\TrafficLight_Car.h" />
+    <ClInclude Include="src\Field\Building\Town\TrafficLight_Human.h" />
+    <ClInclude Include="src\Field\Building\Town\VendingMachine.h" />
+    <ClInclude Include="src\Field\CityMap.h" />
+    <ClInclude Include="src\Field\FieldBase.h" />
+    <ClInclude Include="src\Field\FieldOut.h" />
+    <ClInclude Include="src\Field\FieldPtr.h" />
+    <ClInclude Include="src\Field\Field\Field.h" />
+    <ClInclude Include="src\Field\Field\FloorTilingMap.h" />
+    <ClInclude Include="src\Field\Map\BuildingBlockSizeList.h" />
+    <ClInclude Include="src\Field\Map\MapGenerator.h" />
+    <ClInclude Include="src\Field\Map\RandomEventCreator.h" />
+    <ClInclude Include="src\Field\Map\TJunctionCreator.h" />
+    <ClInclude Include="src\Field\PointGenerator.h" />
+    <ClInclude Include="src\Field\Skybox\Skybox.h" />
+    <ClInclude Include="src\Field\WalkGraph.h" />
+    <ClInclude Include="src\Field\WalkMap.h" />
+    <ClInclude Include="src\Field\WalkPath.h" />
+    <ClInclude Include="src\Field\WorldContentManager\WorldContentManager.h" />
+    <ClInclude Include="src\Game\MyGame.h" />
+    <ClInclude Include="src\Game\Time.h" />
+    <ClInclude Include="src\Graphic\AnimationDx.h" />
+    <ClInclude Include="src\Graphic\AnimationOutSide.h" />
+    <ClInclude Include="src\Graphic\AnimLoader.h" />
+    <ClInclude Include="src\Graphic\BlendMode.h" />
+    <ClInclude Include="src\Graphic\BloomEffect.h" />
+    <ClInclude Include="src\Graphic\DebugDraw.h" />
+    <ClInclude Include="src\Graphic\DrawNumber.h" />
+    <ClInclude Include="src\Graphic\DxlibGraphic.h" />
+    <ClInclude Include="src\Graphic\EffekseerManager.h" />
+    <ClInclude Include="src\Graphic\FontManager.h" />
+    <ClInclude Include="src\Graphic\Light.h" />
+    <ClInclude Include="src\Graphic\Model.h" />
+    <ClInclude Include="src\Graphic\Movie.h" />
+    <ClInclude Include="src\Graphic\Particle\Base\ParticleManager.h" />
+    <ClInclude Include="src\Graphic\Particle\Base\ParticlePiece.h" />
+    <ClInclude Include="src\Graphic\ScalingImage.h" />
+    <ClInclude Include="src\Graphic\Shader\CBuff\Floor_CB.h" />
+    <ClInclude Include="src\Graphic\Shader\CBuff_Struct.h" />
+    <ClInclude Include="src\Graphic\Shader\ShaderManager.h" />
+    <ClInclude Include="src\Graphic\ShadowMap.h" />
+    <ClInclude Include="src\Graphic\Sprite.h" />
+    <ClInclude Include="src\Graphic\SpriteAnimation\ScalingSprite.h" />
+    <ClInclude Include="src\Graphic\TextBox.h" />
+    <ClInclude Include="src\Graphic\TextBoxPriorityManager.h" />
+    <ClInclude Include="src\Graphic\TextDraw.h" />
+    <ClInclude Include="src\ID\EnumIDs.h" />
+    <ClInclude Include="src\Input\DualShock4Input.h" />
+    <ClInclude Include="src\Input\DualShock4Manager.h" />
+    <ClInclude Include="src\Input\DualShockKey.h" />
+    <ClInclude Include="src\Input\GamePad.h" />
+    <ClInclude Include="src\Input\InputChecker.h" />
+    <ClInclude Include="src\Input\Keyboard.h" />
+    <ClInclude Include="src\Input\Operation.h" />
+    <ClInclude Include="src\Input\XInputGamePad.h" />
+    <ClInclude Include="src\learn\MyVector.h" />
+    <ClInclude Include="src\Math\Collision\Collision.h" />
+    <ClInclude Include="src\Math\Collision\CollisionMesh.h" />
+    <ClInclude Include="src\Math\Collision\CollisionTriangle.h" />
+    <ClInclude Include="src\Math\Color.h" />
+    <ClInclude Include="src\Math\Easing.h" />
+    <ClInclude Include="src\Math\Math.h" />
+    <ClInclude Include="src\Math\MathHelper.h" />
+    <ClInclude Include="src\Math\Matrix.h" />
+    <ClInclude Include="src\Math\Matrix2D.h" />
+    <ClInclude Include="src\Math\Point.h" />
+    <ClInclude Include="src\Math\Quaternion.h" />
+    <ClInclude Include="src\Math\Random.h" />
+    <ClInclude Include="src\Math\Rectangle.h" />
+    <ClInclude Include="src\Math\TwoDimensionalArray.h" />
+    <ClInclude Include="src\Math\Vector2.h" />
+    <ClInclude Include="src\Math\Vector3.h" />
+    <ClInclude Include="src\Method\CallBackTimer.h" />
+    <ClInclude Include="src\Method\CountTimer.h" />
+    <ClInclude Include="src\Method\FunctionExecutor.h" />
+    <ClInclude Include="src\Method\MethodExecutor.h" />
+    <ClInclude Include="src\Method\MethodTimer.h" />
+    <ClInclude Include="src\Resource\CsvReader.h" />
+    <ClInclude Include="src\Resource\LoadingList.h" />
+    <ClInclude Include="src\Scene\DemoMovieScene.h" />
+    <ClInclude Include="src\Scene\EntranceScene\EntranceScene.h" />
+    <ClInclude Include="src\Scene\GamePlayScene\GamePlayScene.h" />
+    <ClInclude Include="src\Scene\GameTestScene.h" />
+    <ClInclude Include="src\Scene\Kataoka\Kataoka.h" />
+    <ClInclude Include="src\Scene\LoadingScene.h" />
+    <ClInclude Include="src\Scene\Manager\GameDataManager.h" />
+    <ClInclude Include="src\Scene\ResultScene\ResultScene.h" />
+    <ClInclude Include="src\Scene\Scene.h" />
+    <ClInclude Include="src\Scene\SceneManager.h" />
+    <ClInclude Include="src\Scene\Scenes.h" />
+    <ClInclude Include="src\Scene\SubScene\Menu\DecisionMenu\DecisionMenu.h" />
+    <ClInclude Include="src\Scene\SubScene\Menu\MainMenu\MainMenu.h" />
+    <ClInclude Include="src\Scene\SubScene\Menu\Menu.h" />
+    <ClInclude Include="src\Scene\SubScene\Menu\Option\Option.h" />
+    <ClInclude Include="src\Scene\SubScene\Menu\PauseMenu\PauseMunu.h" />
+    <ClInclude Include="src\Scene\SubScene\Performance\Performance.h" />
+    <ClInclude Include="src\Scene\SubScene\Result\DisplayPhoto\DisplayPhoto.h" />
+    <ClInclude Include="src\Scene\SubScene\Result\ScoreSheet\ScoreSheet.h" />
+    <ClInclude Include="src\Scene\SubScene\Result\ScoreSheet\ScoreSheetContantPos.h" />
+    <ClInclude Include="src\Scene\SubScene\SubScene.h" />
+    <ClInclude Include="src\Scene\SubScene\Title\Title.h" />
+    <ClInclude Include="src\Scene\TransitionsAnimation\FadeAnimation\FadeAnimation.h" />
+    <ClInclude Include="src\Scene\TransitionsAnimation\TransitionsAnimation.h" />
+    <ClInclude Include="src\Scene\TransitionsAnimation\TransitionsAnimations.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\01_TutorialStart\TutorialStart.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\02_DeterminationDescription\DeterminationDescription.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\03_LookAlien\LookAlien.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\04_LookCameraIcon\LookCameraIcon.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\05_TakaShutter\TakaShutter.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\06_ShootingSuccess\ShootingSuccess.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\07_AlienWarning\AlienWarning.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\08_StartHide\StartHide.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\09_Hiding\Hiding.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\10_LookAlertnessIcon\LookAlertnessIcon.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\11_EndHide\EndHide.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\13_ShowMap\ShowMap.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\14_LookMap\LookMap.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\16_LookMapEnemyIcon\LookMapEnemyIcon.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\19_SpecifiedPoint\SpecifiedPoint.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\17_CloseMap\CloseMap.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\22_ReCloseMap\ReCloseMap.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\23_TutorialEnd\TutorialEnd.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\12_ReturnViewPoint\ReturnViewPoint.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\15_LookMapIconDescription\LookMapIconDescription.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\18_Running\Running.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\20_ReShowMap\ReShowMap.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\21_LookSpecifiedPointIcon\LookSpecifiedPointIcon.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\TutorialCommand.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialCommand\TutorialCommands.h" />
+    <ClInclude Include="src\Scene\TutorialScene\TutorialScene.h" />
+    <ClInclude Include="src\Score\ScoreManager.h" />
+    <ClInclude Include="src\Sound\Sound.h" />
+    <ClInclude Include="src\Structs\Structs.h" />
+    <ClInclude Include="src\UI\Action.h" />
+    <ClInclude Include="src\UI\CameraUI.h" />
+    <ClInclude Include="src\UI\FieldMap.h" />
+    <ClInclude Include="src\UI\ShutterFrame.h" />
+    <ClInclude Include="src\UI\UI.h" />
+    <ClInclude Include="src\UI\UIInclude.h" />
+    <ClInclude Include="src\UI\UIManager.h" />
+    <ClInclude Include="src\UI\UIPtr.h" />
+    <ClInclude Include="src\UI\UITemplate.h" />
+    <ClInclude Include="src\World\IWorld.h" />
+    <ClInclude Include="src\World\ObjectManager.h" />
+    <ClInclude Include="src\World\World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="res\Shader\FloorTilingPixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="res\Shader\GaugePixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)res/Shader/%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,480 @@
+#pragma once
+
+// プレイヤー操作の種類
+enum class Operation_Type {
+
+	ANY_BUTTON,					// いずれかのボタン入力(スティック入力は含めない)
+
+	STICK_UP,					// 上入力検知（メニュー用）（左スティックでの入力）
+	STICK_DOWN,					// 下入力検知（メニュー用）（左スティックでの入力）
+	STICK_LEFT,					// 左入力検知（メニュー用）（左スティックでの入力）
+	STICK_RIGHT,				// 右入力検知（メニュー用）（左スティックでの入力）
+
+	DECISION_BUTTON,			// 決定ボタン（メニュー用）
+	CANCEL_BUTTON,				// キャンセルボタン（メニュー用）
+
+	PLAYER_MOVE_STICK,			// プレイヤー移動入力（左スティックでの入力）
+	CHANGE_VIEW_POINT_STICK,	// 視点切り替え入力（右スティックでの入力）
+
+	SHOW_MAP_BUTTON,			// マップ表示ボタン
+	HOLD_CAMERA_BUTTON,			// カメラを構えるボタン
+	TAKE_SHUTTER_BUTTON,		// シャッターを切るボタン
+	HIDE_BUTTON,				// 隠れるボタン
+	DASH_BUTTON,				// 走るボタン
+	RETURN_VIEW_POINT_BUTTON,	// 視点を戻すボタン
+	PAUSE_BUTTON,				// ポーズボタン
+
+	DEBUG_CLEAR_BUTTON,			// デバック用クリア直行ボタン
+};
+
+// スティック入力の種類
+enum Stick_Input_Type {
+
+	LEFT_STICK_ANY,			// 左スティックの入力
+	LEFT_STICK_UP,			// 左スティックの上入力
+	LEFT_STICK_DOWN,		// 左スティックの下入力
+	LEFT_STICK_LEFT,		// 左スティックの左入力
+	LEFT_STICK_RIGHT,		// 左スティックの右入力
+
+	RIGHT_STICK_ANY,		// 右スティックの入力
+	RIGHT_STICK_UP,			// 右スティックの上入力
+	RIGHT_STICK_DOWN,		// 右スティックの下入力
+	RIGHT_STICK_LEFT,		// 右スティックの左入力
+	RIGHT_STICK_RIGHT,		// 右スティックの右入力
+};
+
+// トリガー入力の種類
+enum Trigger_Input_Type {
+
+	LEFT_TRIGGER,			// 左トリガーの入力
+	RIGHT_TRIGGER,			// 右トリガーの入力
+};
+
+
+//モデルID
+enum class MODEL_ID {
+	MODEL_PLAYER,
+	MODEL_SKYBOX,
+	MODEL_STAGE,
+	MODEL_SHADOW_TILE,
+	MODEL_CAR,
+	MODEL_ENEMY,
+	MODEL_CITIZEN_USAUSA,
+	MODEL_FISH,
+	MODEL_TAKOYAKI_YATAI,
+	MODEL_APARTMENT_1,
+	MODEL_APARTMENT_2,
+	MODEL_KOUBAN,
+	MODEL_ZIHANKI,
+	MODEL_SHINGOU_CAR,
+	MODEL_SHINGOU_HUMAN,
+	MODEL_HOUSE_1,
+	MODEL_HOUSE_2,
+	MODEL_ARM_1,
+	MODEL_ARM_2,
+	MODEL_ARM_3,
+	MODEL_ARM_4,
+	MODEL_SMOKING_AREA,
+	MODEL_UFO,
+	MODEL_UFO_LIGHT,
+	SPRITE_QUESTION_FRAME,//警戒度ゲージ枠
+	SPRITE_QUESTION_GAUGE,//警戒度ゲージ
+	SPRITE_EXCLAMATION,
+	SPRITE_NOTICED_LINE,	// 気づき線
+	MODEL_TJUNCTION_MAP,
+	MODEL_CAT,
+	MODEL_CAR_RED,
+	MODEL_CAR_RED1,
+	MODEL_CAR_RED2,
+	MODEL_CAR_RED_LAMP,
+	MODEL_CAR_BLUE,
+	MODEL_CAR_BLUE1,
+	MODEL_CAR_BLUE2,
+	MODEL_CAR_BLUE_LAMP,
+	MODEL_CAR_GRAY,
+	MODEL_CAR_GRAY1,
+	MODEL_CAR_GRAY2,
+	MODEL_CAR_GRAY_LAMP,
+	MODEL_CAR_WHITE,
+	MODEL_CAR_WHITE1,
+	MODEL_CAR_WHITE2,
+	MODEL_CAR_WHITE_LAMP,
+	MODEL_SIGNAL_ROADWAY_GREEN,
+	MODEL_SIGNAL_ROADWAY_RED,
+	MODEL_SIGNAL_ROADWAY_YELLOW,
+	MODEL_SIGNAL_SIDEWALK_NONE,
+	MODEL_SIGNAL_SIDEWALK_GREEN,
+	MODEL_SIGNAL_SIDEWALK_RED,
+	MODEL_MANHOLE,
+	MODEL_BARRIER,			// バリア
+	MODEL_ENEMY_BEARM,		//ビーム
+	MODEL_POLICE,
+	MODEL_POLICE_IDLE,
+	MODEL_POLICE_RUN,
+	MODEL_POLICE_POINTING,
+	MODEL_POLICE_REACTION,
+	MODEL_MOB,
+	MODEL_ENEMY_CAP,
+	MODEL_GRAY_HOLO,
+	MODEL_MOB_PHONE,
+	MODEL_MOB_BAG,
+	SPRITE_SMOKE,
+	MODEL_OUTOFFIELD,
+	MODEL_MANHOLE_ANA
+
+};
+enum class SPRITE_ID {
+	SPRITE_ACTION,//アクション中スプライト
+	SPRITE_CAMERAUI1,
+	SPRITE_CAMERAUI2,
+	SPRITE_FRAME,
+	SPRITE_TEXTURE,
+
+	SPRITE_MISSION_START,
+
+	SPRITE_CONFIRM,//確定度ゲージ
+	SPRITE_CONFIRM_FRAME,//確定度ゲージフレーム
+	SPRITE_CONFIRM_NOMBER,//確定度ゲージの数値
+	SPRITE_CAMERA_ICON,
+	SPRITE_MAP_ICON,
+	SPRITE_PIN,
+	SPRITE_CHANCE,
+
+	// 複数のシーン用のスプライト
+	SPRITE_BLIND,				// 画面を暗くするための画像
+	SPRITE_YES_UI,				// “はい”と書かれたロゴ
+	SPRITE_NO_UI,				// “いいえ”と書かれたロゴ
+	SPRITE_MENU_CURSOR,			// メニューカーソル
+	SPRITE_NUMBER_UI,			// 数字と％：が書かれた画像
+	SPRITE_PRESS_ANY_BUTTON_UI, // “プレスエニーボタン”と書かれたロゴ
+
+	// エントランスシーン用のスプライト
+	SPRITE_TITLELOGO,
+	SPRITE_SOZAI_TEIKYOU_TEXT,
+	SPRITE_GAME_START,
+	SPRITE_GO_TO_OPTION,
+	SPRITE_EXIT,
+
+	// オプション用スプライト
+	SPRITE_OPTION_CAMERA_SENSITIVITY,
+	SPRITE_OPTION_BGM_VOLUME,
+	SPRITE_OPTION_SE_VOLUME,
+	SPRITE_OPTION_FLAME,
+	SPRITE_OPTION_BAR,
+	SPRITE_OPTION_CURSOR,
+
+	// チュートリアル用スプライト
+	SPRITE_A_PUSH_1,
+	SPRITE_A_PUSH_2,
+	SPRITE_LT_PUSH,
+	SPRITE_RT_PUSH,
+	SPRITE_Y_PUSH,
+	SPRITE_PUSH_ARROW,
+	SPRITE_START_SKIP,
+	SPRITE_LOOK_SPECIFIED_POINT_ICON,
+	SPRITE_LOOK_ALIEN,
+	SPRITE_LOOK_CAMERA_ICON,
+	SPRITE_LOOK_DETERMINATION,
+	SPRITE_LOOK_ALERTNESS_ICON,
+	SPRITE_LOOK_MINI_ALERTNESS_ICON,
+	SPRITE_LOOK_MAP_ICON,
+	SPRITE_LOOK_MAP_ICON_DESCRIPTION,
+	SPRITE_LOOK_MAP_ENEMY_ICON,
+
+	// ポーズ用スプライト
+	SPRITE_PAUSE_BG, // ポーズ画面の背景
+	SPRITE_RETURN_GAME,  // 選択項目：ゲームに戻る
+	SPRITE_RETURN_TITLE,  // 選択項目：タイトルに戻る
+	SPRITE_ASK_RETURN_TITLE,  // タイトルに戻る確認背景
+
+	// リザルトシーン用のスプライト
+	SPRITE_RESULT_BG,	  // リザルトの背景
+	SPRITE_DOCUMENTS,	  // スコアが書かれる紙の画像
+	SPRITE_GAME_CLEAR_UI, // ゲームクリアのロゴ
+	SPRITE_GAME_OVER_UI,  // ゲームオーバーのロゴ
+	SPRITE_PLAY_TIME_UI,  // “経過時間”と書かれたロゴ
+	SPRITE_EVALUATION_UI, // “評価”と書かれたロゴ
+	SPRITE_EVALUATION_WORD_UI, // “- D C B A S”と書かれたロゴ
+
+	// 2Dリソースリストに書かれていないスプライト
+	Awareness,			// “確定度”と書かれたロゴ
+	Photo_Count,		// “撮影回数”と書かれたロゴ
+	Escape_Count,		// “逃走回数”と書かれたロゴ
+	Game_over_retry_UI, // “リトライ”と書かれたロゴ + 背景を暗くする画像
+	A_Lot_Of_Coin_,		// 沢山のコインが描かれた画像
+	Less_Coin_,			// 少しのコインが描かれた画像
+	Stamp,				// 判子の画像
+
+	SPRITE_MAP_PLAYER,
+	SPRITE_MAP_ENEMY,
+	SPRITE_DESC_PLAYER,
+	SPRITE_TEXT_PLAYER,
+	SPRITE_DESC_ENEMY,
+	SPRITE_TEXT_ENEMY,
+	SPRITE_TEXT_REDPIN,
+	SPRITE_TEXT_BLACKPIN,
+
+	TEXTURE_VENDING_RED,
+	TEXTURE_VENDING_BLUE,
+
+	TEXTURE_HOUSE1_BLACK,
+	TEXTURE_HOUSE1_WHITE,
+	TEXTURE_HOUSE1_BROWN,
+
+	TEXTURE_NORMAL_HOUSE1_BLACK,
+	TEXTURE_NORMAL_HOUSE1_WHITE,
+	TEXTURE_NORMAL_HOUSE1_BROWN,
+
+	TEXTURE_HOUSE2_WHITE,
+	TEXTURE_HOUSE2_BLACK,
+	TEXTURE_HOUSE2_RED,
+
+	TEXTURE_NORMAL_HOUSE2_WHITE,
+	TEXTURE_NORMAL_HOUSE2_BLACK,
+	TEXTURE_NORMAL_HOUSE2_RED,
+
+	SPRITE_MAP_GOAL,
+	SPRITE_DESC_GOAL,
+	SPRITE_TEXT_GOAL,
+
+	SPRITE_CONFIRM_ALIAN0,
+	SPRITE_CONFIRM_ALIAN1,
+	SPRITE_CONFIRM_ALIAN2,
+	SPRITE_CONFIRM_ALIAN3,
+	SPRITE_CONFIRM_ALIAN4,
+	SPRITE_CONFIRM_ALIAN5,
+	SPRITE_CONFIRM_ALIAN6,
+	SPRITE_CONFIRM_ALIAN7,
+	SPRITE_CONFIRM_ALIAN8,
+	SPRITE_CONFIRM_ALIAN9,
+	SPRITE_CONFIRM_ALIAN10,
+
+	SPRITE_BLACK,
+
+	SPRITE_LOADING_DOT,
+
+	SPRITE_ALERT_FRAME_ICON,
+	SPRITE_ALERT_GAUGE_ICON,
+};
+enum class BGM_ID {
+	SOUND_TITLE,
+	SOUND_TUTORIAL,
+	SOUND_GAME,
+	SOUND_RESULT,
+	SOUND_GETAWAY,
+	SOUND_GAMECLEAR,
+	SOUND_GAMEOVER,
+	
+};
+enum class SE_ID {
+	SELECT_SE,//選択
+
+	CURSOR_MOVE_SE,
+	DECISION_SE,
+
+	RUN_SE,//足音
+	WIND_SE,//移動時風音
+	JUMP_SE,//ジャンプ
+	LAND_SE,//着地
+	HIT_SE,//接触
+
+	STAMP_SE,
+	SIREN_SE,//サイレン
+	SHUTTER_SE,
+	GUARD_SE,
+	NOTICE_SE,
+	ALIAN_VOICE_SE,
+	NEKO_VOICE_SE,
+	NEKO_GRAY_VOICE_SE,
+	UFO_ABDUCTION_SE,
+
+	FALL_DOWN_SE,
+	FALL_PICK_SE,
+	FALL_VOICE_SE,
+
+	JUNCTION_CAR_HORN_SE,
+	JUNCTION_CAR_BREAK_SE,
+	JUNCTION_HORN_VC_SE,
+	JUNCTION_HUTTOBI_VC_SE,
+
+	POLICE_BEAM_SE,
+
+	SMOKE_BEAM_CHARGE_SE,
+	SMOKE_BEAM_SE,
+	
+	MANHOLE_ALIEN_DOWN,
+	MANHOLE_ALIEN_FIT,
+
+
+
+	VEBDINGMACHINE_HAVE_SE,
+	VEBDINGMACHINE_THROW_SE,
+
+	HOLOGRAM_ALEN_START,
+	HOLOGRAM_ALEN_TALK,
+
+	VEBDINGMACHINE_ALIEN_VC1,
+	MANHOLE_ALIEN_VC1,
+	MANHOLE_ALIEN_VC2,
+
+	POLICE_STOP_VC,
+	POLICE_RUN_VC,
+	POLICE_SAKEBI_VC,
+	POLICE_RETURN_VC
+
+};
+enum class FONT_ID {
+	FONT_COUNT,//カウント用フォント
+	FONT_TEXT,
+};
+//Effekseerを利用したエフェクト用ID
+enum class EFFECT_ID {
+
+};
+
+enum class SHADOW_ID {
+	GAME_SHADOW,
+};
+
+//ゲーム中で利用するシーンを列挙する
+enum class SceneType {
+	SCENE_LOADING,
+	SCENE_ENTRANCE,
+	SCENE_DEMOMOVIE,
+	SCENE_TUTORIAL,
+	SCENE_GAMEPLAY,
+	SCENE_RESULT,
+	SCENE_EXIT,//ダミーシーン
+};
+
+// ゲーム中で利用するサブシーンを列挙する
+enum class SubSceneType {
+
+	NONE,
+	TITLE,
+	DISPLAY_PHOTO,
+	SCORE_SHEET,
+	MAIN_MENU,
+	OPTION,
+	PAUSE_MENU,
+	DECISION_MENU,
+};
+
+enum class TransitionsAnimeType {
+	None,
+	FadeAnimation,
+};
+
+// エントランスシーンの状態の種類
+enum EntranceState
+{
+	TITLE,
+	MAINMENU,
+	OPTION,
+};
+
+// ゲームプレイシーンの状態の種類
+enum PauseState
+{
+	PAUSE_MENU,
+	PAUSE_OPTION,
+};
+
+
+
+//メッセージによるActor間の操作
+enum class EventMessage {
+	Hit_Car,
+	Hit_Bullet,
+	Hide_Object,
+	Hide_InCamera,
+	Score_None,//エネミーのスコアを0にする
+	Hit_Player,
+	Hit_Enemy,
+	Hit_Citizen,
+	Emission,
+	Hit_Object,
+	Stop_Player,
+	Aware_None,
+	Abduct_Cat,
+	Play_Smoke,
+};
+
+//Actorのグループ分け
+enum class ActorGroup {
+	ETCETERA_ACTOR,//ゲームに関与しないアクター
+	PLAYER_ACTOR,//プレイヤー
+	CAR_ACTOR,//車アクター
+	POINT_ACTOR,//チェックポイント
+	ENEMY_ACTOR,//敵
+	CITIZEN_ACTOR,//住民
+	ENEMY_HAT_ACTOR,	//エネミーの帽子
+	UI_ACTOR,//UI,
+	POLICE_ACTOR,	//警察
+	ZIHANKI_ACTOR,	//自販機
+	EVENT_ACTOR,	//イベント系のアクター
+	SIGNAL_ACTOR
+
+};
+
+// 建物のグループ分け（仮の名称）
+enum class BuildingGroup {
+	FISHSTORE=1,//魚屋さん
+	POLICEBOX,//交番
+	TAKOYAKISHOP,//たこ焼き屋
+	APARTMENT_1,//マンション１
+	APARTMENT_2,//マンション２
+	FOODSTALL_1,//屋台１
+	FOODSTALL_2,//屋台２
+
+	TRAFFICLIGHT_ROADWAY,//車道用信号機
+	TRAFFICLIGHT_SIDEWALK,//歩道用信号機
+	VENDINGMACHINE_1,//自動販売機１
+	VENDINGMACHINE_2,//自動販売機２
+	SHOPPINGSTREET_ARCH,//商店街のアーチ
+	CLOCK,//時計
+	SMOKING_AREA,//喫煙所
+	HOUSE_1,//民家1
+	HOUSE_2,//民家2
+	BACKSTREET_RATI,//路地裏
+	BACKSTREET_KAIWA,//路地裏
+	KOUSATEN,		 //交差点
+	MANHORU,			//マンホール
+	NEKO,
+	SIGNAL_ROADWAY,
+	SIGNAL_SIDEWALK1,
+	SIGNAL_SIDEWALK2,
+};
+
+//プレイヤーの回避アクション分け(仮)
+enum class EventAction_State {
+	Null,//アクションなし
+	Car_Action, //車の回避アクション
+	Clock_Action,//時計の回避アクション
+	Vending_Action,//自動販売機の回避アクション
+	UnderVending_Action,//自販機の下の回避アクション
+	Poster_Action,//ポスターの回避アクション
+	TimeTable_Action,//時刻表の回避アクション
+};
+
+// 発生するイベントの種類
+enum class EventType {
+	EVENT_NULL = 99,		// ダミー 何も起こらない
+	EVENT_POLICE = 0,		// 交番イベント
+	EVENT_TAKOYAKIYA,			// たこ焼き屋イベント
+	EVENT_BACKSTREET_RATI,		// 裏路地イベント拉致
+	EVENT_BACKSTREET_KAIWA,		// 裏路地イベント会話
+	EVENT_JUNCTION,			// 交差点イベント
+	EVENT_VENDING,			// 自販機イベント
+	EVENT_SMOKING,			// 喫煙所イベント
+	EVENT_FISHSTORE,			// 魚屋イベント
+	EVENT_MANHORU,
+	EVENT_NEKO				//猫イベント
+};
+
+enum Signal_Type
+{
+	Signal_Red,
+	Signal_Yellow,
+	Signal_Green,
+};
